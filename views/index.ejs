@@ -1,0 +1,53 @@
+<% include partials/header %>
+
+<% if(errors){ %>
+  <% errors.forEach(function(e){ %>
+    <div class='alert alert-warning alert-dismissible'>
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <%= e.msg %>
+    </div>
+  <% }) %>
+<% }; %>
+
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Welcome to PostBoard, get started below.
+    </div>
+
+    <form class="form-horizontal" method="POST" action="/users/add">
+
+    <div class="panel-body">
+      <div class="container">
+
+        <% users.forEach(function(u){ %>
+          <div class="row message-bubble">
+          <a tabindex="0" class="pull-left avatar" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="<%= u.userName %>" data-content="<strong>Joined:</strong> Jan 23 2012 <br /> <strong>Posts:</strong> 232">
+          <img src="http://via.placeholder.com/72x72">
+          </a>
+
+            <p class="msg-user">
+              <strong><%= u.userName %></strong> says:
+            </p>
+            <p class='msg-body'><%= u.msg %></p>
+          </div>
+        <% }); %>
+      </div>
+
+      <div class="panel-footer">
+        <div class="input-group">
+          <input type="userName" class="form-control" id="userName" name="userName" placeholder="Choose a display name">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">Send</button>
+          </span>
+        </div>
+        <textarea type="text" class="form-control" id="msg" name="msg"></textarea>
+      </div>
+
+    </div>
+  </form>
+
+  </div>
+</div>
+
+<% include partials/footer %>

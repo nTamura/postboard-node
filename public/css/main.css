@@ -1,0 +1,43 @@
+html, body {
+
+}
+
+#title-logo{
+  width: 30px;
+  height: auto;
+  padding-bottom: 8px;
+}
+
+
+
+.avatar {
+  display: inline-block;
+  margin-right: 10px;
+  /*padding-left: 10px;
+  padding-right: 10px;*/
+  padding: 0px 10px 10px;
+}
+.msg-user{
+  margin-bottom: 0px;
+}
+.msg-body{
+  padding: 0px 20px 10px 102px;
+}
+
+.message-bubble {
+  padding: 10px 0px 10px 0px;
+}
+.message-bubble:nth-child(even) {
+  background-color: #F5F5F5;
+}
+.message-bubble > * {
+    padding-top: 10px;
+    /*padding-right: 10px;*/
+}
+.panel-body {
+  padding: 0px;
+}
+.panel-heading {
+  background-color: #3d6da7 !important;
+  color: white !important;
+}
