@@ -57,13 +57,14 @@ app.post('/users/add', function(req, res){
   req.checkBody('userName', 'Name is required').notEmpty();
   req.checkBody('msg', 'Message cannot be empty').notEmpty();
   const errors = req.validationErrors();
+
   if(errors){
     res.render('index', {
       title: 'PostBoard',
       users: users,
       errors: errors
     });
-    } else {
+  } else {
     let newUser = {
       userName: req.body.userName,
       msg: req.body.msg
@@ -77,7 +78,7 @@ app.post('/users/add', function(req, res){
       }
       res.redirect('/');
     });
-  }
+  };
 });
 
 app.listen(8000, function(){
