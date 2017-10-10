@@ -19,6 +19,18 @@
       <div class="panel-body">
         <div class="container">
 
+          <% users.forEach(function(u){ %>
+            <div class="row message-bubble">
+              <a tabindex="0" class="pull-left avatar" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="<%= u.userName %>" data-content="<strong>Joined:</strong> Jan 23 2012 <br /> <strong>Posts:</strong> 232">
+                <img src="http://via.placeholder.com/72x72">
+              </a>
+
+              <p class="msg-user">
+                <strong><%= u.userName %></strong> says:
+              </p>
+              <p class='msg-body'><%= u.msg %></p>
+            </div>
+          <% }); %>
         </div>
 
         <div class="panel-footer">

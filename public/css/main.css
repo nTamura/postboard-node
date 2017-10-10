@@ -41,3 +41,15 @@ html, body {
   background-color: #3d6da7 !important;
   color: white !important;
 }
+
+
+
+/* footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #F5F5F5;
+}
