@@ -4,7 +4,7 @@ const path = require('path');
 const expressValidator = require('express-validator');
 const mongojs = require('mongojs');
 const db = mongojs('postboard', ['users']);
-
+const ObjectId = mongojs.ObjectId;
 const app = express();
 
 // view engine
@@ -79,6 +79,17 @@ app.post('/users/add', function(req, res){
       res.redirect('/');
     });
   };
+});
+
+app.delete('/users/delete/:id', function(req, res){
+    // console.log(req.params.id)
+    db.users.remove({_id: ObjectId(req.params.id)}, function(err, result){
+      if(err){
+        console.log(err);
+      }
+      console.log('Post deleted');
+      res.redirect('/');
+    });
 });
 
 app.listen(8000, function(){
