@@ -6,7 +6,7 @@ $(function(){
 });
 
 function deletePost(){
-  var confirmation = confirm('Delete post?');
+  const confirmation = confirm('Delete post?');
   if(confirmation){
     $.ajax({
       type:'DELETE',
