@@ -1,6 +1,6 @@
 <% include partials/header %>
 
-<% if(errors){ %>
+<% if(errors != undefined){ %>
   <% errors.forEach(function(e){ %>
     <div class='alert alert-warning alert-dismissible'>
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -49,3 +49,31 @@
 </div>
 
 <% include partials/footer %>
+
+
+
+
+
+
+
+<%# use admin
+db.createUser(
+  {
+    user: "ntamura",
+    pwd: "1151",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+mongo --port 27017 -u "ntamura" -p "1151" --authenticationDatabase "postboard"
+
+
+db.createUser(
+  {
+    user: "ntamura",
+    pwd: "1151",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+mongo --port 27017 -u "ntamura" -p "1151" --authenticationDatabase "test"%>

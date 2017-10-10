@@ -44,8 +44,8 @@ app.use(expressValidator({
 
 // app is getting a view get requiest
 app.get('/', function(req, res){
-  db.users.find(function(err,docs){
-    // console.log(docs);
+  db.users.find(function(err, docs){
+    console.log(docs);
     res.render('index', {
       title: 'PostBoard',
       users: docs
